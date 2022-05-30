@@ -7,8 +7,17 @@ docker_daemon_config: {}
 docker_service_enabled: true
 docker_service_state: "started"
 docker_users: []
+
 docker_sdk_for_python_install: false
 docker_sdk_for_python_version: "latest"
-docker_compose_install: false
-docker_compose_version: "latest"
+
+docker_compose_install: true
+docker_compose_version: 2.5.1
 docker_compose_bash_completion_install: true
+docker_compose_mirror: https://github.com/docker/compose/releases/download
+docker_compose_os: linux
+docker_compose_arch: x86_64
+docker_compose_persona: sys
+docker_compose_parent_install_dir:
+  usr: '{{ ansible_env.HOME }}/.docker'
+  sys: /usr/local/lib/docker

@@ -1,6 +1,21 @@
 ---
-- name: Install Docker Compose
-  pip:
-    name: docker-compose
-    state: "{{ 'latest' if docker_compose_version == 'latest' else 'present' }}"
-    version: "{{ docker_compose_version if docker_compose_version != 'latest' else omit }}"
+- name: Create installation directory
+  become: true
+  file:
+    path: '{{ docker_compose_eff_install_dir }}'
+    state: directory
+    mode: 0755
+
+- name: Downloading {{ docker_compose_url }} to {{ docker_compose_install_fq_bin }}
+  become: true
+  get_url:
+    url: '{{ docker_compose_url }}'
+    dest: '{{ docker_compose_install_fq_bin }}'
+    mode: 0755
+
+- name: Linking {{ docker_compose_install_fq_link }} to {{ docker_compose_install_fq_bin }}
+  become: true
+  file:
+    src: '{{ docker_compose_install_fq_bin }}'
+    dest: '{{ docker_compose_install_fq_link }}'
+    state: link

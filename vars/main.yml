@@ -3,7 +3,7 @@ docker_compose_platform: '{{ docker_compose_os }}-{{ docker_compose_arch }}'
 docker_compose_bin: 'docker-compose-{{ docker_compose_platform }}'
 
 docker_compose_url: '{{ docker_compose_mirror }}/v{{ docker_compose_version }}/{{ docker_compose_bin }}'
-docker_compose_install_exe: 'docker-compose-{{ docker_compose_ver }}'
+docker_compose_install_exe: 'docker-compose-{{ docker_compose_version }}'
 docker_compose_eff_install_dir: '{{ docker_compose_parent_install_dir[docker_compose_persona] }}/cli-plugins'
 docker_compose_install_fq_bin: '{{ docker_compose_eff_install_dir }}/{{ docker_compose_install_bin }}'
 docker_compose_install_fq_link: '{{ docker_compose_eff_install_dir }}/docker-compose'

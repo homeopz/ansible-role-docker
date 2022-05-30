@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: homeopz
+  role_name: docker
+  company: HomeOpz
+  description: Manage Docker Packages
+  license: Apache 2
+  min_ansible_version: 2.10.0
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+        - jammy
+  galaxy_tags:
+    - docker
+    - docker-compose
+dependencies: []

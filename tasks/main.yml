@@ -34,6 +34,6 @@
   include_tasks: install-docker-compose.yml
   when: docker_compose_install
 
-- name: Install Docker Compose bash completion.
-  include_tasks: install-docker-compose-bash-completion.yml
-  when: docker_compose_install and docker_compose_bash_completion_install
+# - name: Install Docker Compose Bash completion
+#   include_tasks: install-docker-compose-bash-completion.yml
+#   when: docker_compose_install and docker_compose_bash_completion_install

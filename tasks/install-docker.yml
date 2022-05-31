@@ -28,4 +28,3 @@
       - docker-ce-cli{% if docker_version != 'latest' %}={{ docker_version }}{% endif %}
       - containerd.io
     state: "{{ 'latest' if docker_version == 'latest' else 'present' }}"
-  when: lookup('env', 'WSL_DISTRO_NAME') | length > 0

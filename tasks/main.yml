@@ -14,6 +14,7 @@
     name: docker
     enabled: "{{ docker_service_enabled }}"
     state: "{{ docker_service_state }}"
+  when: lookup('env', 'WSL_DISTRO_NAME') | length == 0
 
 - name: Configure Docker daemon
   include_tasks: configure-docker-daemon.yml
